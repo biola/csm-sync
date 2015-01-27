@@ -1,0 +1,212 @@
+oracle:
+  connection_string: # set in settings.local.yml
+
+redis:
+  url: redis://localhost:6379/0
+
+ws:
+  cert_path: # set in settings.local.yml
+  key_path: # set in settings.local.yml
+  key_password: # set in settings.local.yml
+
+worker:
+  enabled: true
+  schedule:
+    hour: 5
+
+csv:
+  path: "./files/csm_export.csv"
+
+# See http://rdoc.info/github/mikel/mail/Mail#defaults-class_method
+email:
+  from: no-reply@biola.edu
+  delivery_method: test
+  options: {}
+
+exception_notification:
+  options:
+    email_prefix: "[csm-sync] "
+    sender_address: "no-reply@biola.edu"
+    exception_recipients:
+      - appdev@biola.edu
+
+csm:
+  username: BIOLAIMPORTER
+  password: # set in settings.local.yml
+
+picklists:
+  race:
+    American Indian or Alaskan Native: American Indian or Alaskan Native
+    Asian: Asian
+    Black or African American: Black or African American
+    Multiple Regulatory Races: Multiple Regulatory Races
+    Native Hawaiian or Other Pacific Islander: Native Hawaiian or Other Pacific Islander
+    Nonresident Alien: Nonresident Alien
+    Race or Ethnicity Unknown: Race or Ethnicity Unknown
+    Refused to Indicate: Refused to Indicate
+    White: White
+
+  class_level:
+    Freshman: Freshman
+    Sophomore: Sophomore
+    Junior: Junior
+    Senior: Senior
+    Graduate Level 1: Graduate Level 1
+    Graduate Level 2: Graduate Level 2
+    Graduate Level 3: Graduate Level 3
+    Graduate Level 4: Graduate Level 4
+
+  college:
+    Cook Sch Intercultural Studies: Cook Sch Intercultural Studies
+    Crowell School of Business: Crowell School of Business
+    Exchange Student (Special): Exchange Student (Special)
+    Rosemead Sch of Psychology: Rosemead Sch of Psychology
+    School of Arts & Sciences: School of Arts & Sciences
+    School of Education: School of Education
+    Talbot School of Theology: Talbot School of Theology
+    Undergraduate: Undergraduate
+
+  degree:
+    Bachelor of Arts: Bachelor of Arts
+    Bachelor of Fine Arts: Bachelor of Fine Arts
+    Bachelor of Music: Bachelor of Music
+    Bachelor of Science: Bachelor of Science
+    Certificate: Certificate
+    Credential: Credential
+    Doctor of Ministry (D.Min.): Doctor of Ministry (D.Min.)
+    Doctor of Missiology (D.Miss.): Doctor of Missiology (D.Miss.)
+    Ed.D. in Educational Studies: Ed.D. in Educational Studies
+    Exchange Student: Exchange Student
+    MA Linguistics & Biblical Lang: MA Linguistics & Biblical Lang
+    MA Spiritual Form/Soul Care: MA Spiritual Form/Soul Care
+    MA in Applied Linguistics: MA in Applied Linguistics
+    MA in Christian Apologetics: MA in Christian Apologetics
+    MA in Christian Education: MA in Christian Education
+    MA in Christian Min & Ldrshp: MA in Christian Min & Ldrshp
+    MA in Intercultural Studies: MA in Intercultural Studies
+    MA in Missions: MA in Missions
+    MA in Science & Religion: MA in Science & Religion
+    Master of Arts: Master of Arts
+    Master of Arts in Anthropology: Master of Arts in Anthropology
+    Master of Arts in Education: Master of Arts in Education
+    Master of Arts in TESOL: Master of Arts in TESOL
+    Master of Arts in Teaching: Master of Arts in Teaching
+    Master of Business Admin (MBA): Master of Business Admin (MBA)
+    Master of Divinity (M.Div.): Master of Divinity (M.Div.)
+    Master of Theology (Th.M.): Master of Theology (Th.M.)
+    Non Degree: Non Degree
+    Ph.D. Intercultural Education: Ph.D. Intercultural Education
+    Ph.D. in Clinical Psychology: Ph.D. in Clinical Psychology
+    Ph.D. in Educational Studies: Ph.D. in Educational Studies
+    Ph.D. in Intercultural Studies: Ph.D. in Intercultural Studies
+    Psy.D. in Clinical Psychology: Psy.D. in Clinical Psychology
+    Undergrad Credit: Undergrad Credit
+
+  major:
+    Adult/Family Ministry: Adult/Family Ministry
+    Anthropology: Anthropology
+    Apologetics: Apologetics
+    Applied Linguistics: Applied Linguistics
+    Applied Psychology: Applied Psychology
+    Asian American Ministry: Asian American Ministry
+    Bib/Theo Stds Diversified: Bib/Theo Stds Diversified
+    Bible Exposition: Bible Exposition
+    Biblical & Theo Stds Cert: Biblical & Theo Stds Cert
+    Biblical & Theological Studies: Biblical & Theological Studies
+    Biblical Studies Certificate: Biblical Studies Certificate
+    Bio Sci:Secondary Instruction: Bio Sci:Secondary Instruction
+    Biochemistry: Biochemistry
+    Biological Science: Biological Science
+    Business Administration: Business Administration
+    Chemistry: Chemistry
+    Children's Ministry: "Children's Ministry"
+    Christian Apologetics: Christian Apologetics
+    Christian Education: Christian Education
+    Christian Ministries: Christian Ministries
+    Cinema and Media Arts: Cinema and Media Arts
+    Clear Credential: Clear Credential
+    Clinical Psychology: Clinical Psychology
+    Comm Sciences Disorders: Comm Sciences Disorders
+    Communication Disorders: Communication Disorders
+    Communication Studies: Communication Studies
+    Computer Science: Computer Science
+    Cross-Cultural Ed Ministry: Cross-Cultural Ed Ministry
+    Curriculum and Instruction: Curriculum and Instruction
+    Design: Design
+    Discipleship for 21st Century: Discipleship for 21st Century
+    Doctor of Missiology: Doctor of Missiology
+    Early Childhood: Early Childhood
+    Educational Studies: Educational Studies
+    Effective Family Ministries: Effective Family Ministries
+    Engaging Mind & Culture: Engaging Mind & Culture
+    Engineering Physics: Engineering Physics
+    English: English
+    Environmental Science: Environmental Science
+    Evangelism and Discipleship: Evangelism and Discipleship
+    Executive Leadership: Executive Leadership
+    Growing & Multiplying Churches: Growing & Multiplying Churches
+    History: History
+    History & Philosophy of Scienc: History & Philosophy of Scienc
+    Human Biology: Human Biology
+    Humanities: Humanities
+    Intercultural Education: Intercultural Education
+    Intercultural Studies: Intercultural Studies
+    Journalism: Journalism
+    Journalism & Integrated Media: Journalism & Integrated Media
+    Kinesiology: Kinesiology
+    Liberal Studies: Liberal Studies
+    Liberal Studies Elementary Ed: Liberal Studies Elementary Ed
+    Linguistics & ICS: Linguistics & ICS
+    Linguistics/Biblical Language: Linguistics/Biblical Language
+    Master of Business Admin: Master of Business Admin
+    Mathematics: Mathematics
+    Messianic Jewish Studies: Messianic Jewish Studies
+    Ministry Skills: Ministry Skills
+    Missions: Missions
+    Missions & ICS: Missions & ICS
+    Multiple Subject: Multiple Subject
+    Multiple Subject Credential: Multiple Subject Credential
+    Music: Music
+    Music Composition: Music Composition
+    Music Education: Music Education
+    Music Performance: Music Performance
+    New Testament: New Testament
+    Nursing: Nursing
+    Old Testament: Old Testament
+    Old Testament & Semitics: Old Testament & Semitics
+    Pastoral Care & Couns: Pastoral Care & Couns
+    Pastoral/General Ministries: Pastoral/General Ministries
+    Personalized: Personalized
+    PhD in Educational Studies: PhD in Educational Studies
+    Philosophy: Philosophy
+    Philosophy Religion & Ethics: Philosophy Religion & Ethics
+    Physical Education: Physical Education
+    Physical Science: Physical Science
+    Physics: Physics
+    Political Science: Political Science
+    Preaching Lit Forms of Bible: Preaching Lit Forms of Bible
+    Prelim Ed Specialist Inst Cred: Prelim Ed Specialist Inst Cred
+    Psychology: Psychology
+    Public Relations: Public Relations
+    Science and Religion: Science and Religion
+    Single Subject: Single Subject
+    Single Subject Credential: Single Subject Credential
+    Social Science: Social Science
+    Sociology: Sociology
+    Spanish: Spanish
+    Special: Special
+    Special Education: Special Education
+    Spiritual Form Certificate: Spiritual Form Certificate
+    Spiritual Formation: Spiritual Formation
+    Spiritual Formation/Soul Care: Spiritual Formation/Soul Care
+    Studio Arts: Studio Arts
+    Systematic Theology: Systematic Theology
+    TESOL: TESOL
+    TESOL Certificate Program: TESOL Certificate Program
+    Theatre: Theatre
+    Theology: Theology
+    Theology Certificate: Theology Certificate
+    Undecided: Undecided
+    Urban Studies: Urban Studies
+    Women's Ministries: "Women's Ministries"
+    Youth Ministry: Youth Ministry
