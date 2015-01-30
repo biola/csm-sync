@@ -66,12 +66,20 @@ WHERE id NOT IN(SELECT id FROM bsv_csm_student)'
     end
     alias :cas_username :netid
 
+    def student
+      student? ? 'Yes' : 'No'
+    end
+
     def student?
       source == 'STUDENT'
     end
 
+    def alumnus
+      alumnus? ? 'Yes' : 'No'
+    end
+
     def alumnus?
-      alumnus == 'Y'
+      @alumnus == 'Y'
     end
 
     def contact_type
@@ -103,8 +111,8 @@ WHERE id NOT IN(SELECT id FROM bsv_csm_student)'
         'Last Name' => last_name,
         'Gender' => gender,
         'Ethnicity' => race,
-        'Alumnus' => alumnus?,
-        'Student' => student?,
+        'Alumnus' => alumnus,
+        'Student' => student,
         'Primary Email' => email,
         'Cell Phone' => cell,
         'Permanent Street Address 1' => street1,
