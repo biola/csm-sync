@@ -1,15 +1,15 @@
 module CSMSync
   class Contact
-    SQL = 'SELECT id, lname, fname, mname, gender, race, alumnus, email, cell, perm_street_line1, perm_street_line2, perm_city, perm_state, perm_zip, perm_nation, grad_date, applicant_type, class_level, college, degree, major, concentration, admit_term, student_type
+    SQL = 'SELECT id, lname, fname, mname, gender, ethnicity, race, alumnus, email, cell, perm_street_line1, perm_street_line2, perm_city, perm_state, perm_zip, perm_nation, grad_date, applicant_type, class_level, college, degree, major, concentration, admit_term, student_type
 FROM bsv_csm_student
 UNION
-SELECT id, lname, fname, mname, gender, race, alumnus, email, cell, perm_street_line1, perm_street_line2, perm_city, perm_state, perm_zip, perm_nation, grad_date, applicant_type, NULL, college, degree, major, concentration, NULL, NULL
+SELECT id, lname, fname, mname, gender, ethnicity, race, alumnus, email, cell, perm_street_line1, perm_street_line2, perm_city, perm_state, perm_zip, perm_nation, grad_date, applicant_type, NULL, college, degree, major, concentration, NULL, NULL
 FROM bsv_csm_alumni
 WHERE id NOT IN(SELECT id FROM bsv_csm_student)'
     ARRAY_SEPARATOR = '|'
 
     attr_accessor :first_name, :middle_name, :last_name,
-                  :gender, :race,
+                  :gender, :ethnicity, :race,
                   :id_number,
                   :email, :cell,
                   :street1, :street2, :city, :state, :zip, :country,
@@ -22,6 +22,7 @@ WHERE id NOT IN(SELECT id FROM bsv_csm_student)'
     alias :fname= :first_name=
     alias :mname= :middle_name=
     # gender
+    # ethnicity
     # race
     # alumnus
     # email
@@ -110,7 +111,8 @@ WHERE id NOT IN(SELECT id FROM bsv_csm_student)'
         'MI' => middle_initial,
         'Last Name' => last_name,
         'Gender' => gender,
-        'Ethnicity' => race,
+        'Ethnicity' => ethnicity,
+        'Race' => race,
         'Alumnus' => alumnus,
         'Student' => student,
         'Primary Email' => email,
