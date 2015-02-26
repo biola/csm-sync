@@ -6,5 +6,5 @@ ws:
   key_path: /path/to/cert.pem
   key_password: "**********"
 
-csm:
+upload:
   password: "************"

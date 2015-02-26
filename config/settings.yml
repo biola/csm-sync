@@ -30,8 +30,9 @@ exception_notification:
     exception_recipients:
       - appdev@biola.edu
 
-csm:
-  username: BIOLAIMPORTER
+upload:
+  host: biola-csm.symplicity.com
+  username: bioladrop
   password: # set in settings.local.yml
 
 picklists:
