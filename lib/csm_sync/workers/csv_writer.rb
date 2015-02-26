@@ -5,7 +5,7 @@ module CSMSync
       include Sidetiq::Schedulable
 
       recurrence do
-        daily.hour_of_day(Settings.worker.schedule.hour)
+        weekly.day(Settings.worker.schedule.day).hour_of_day(Settings.worker.schedule.hour)
       end
 
       def perform

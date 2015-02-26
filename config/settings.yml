@@ -12,7 +12,8 @@ ws:
 worker:
   enabled: true
   schedule:
-    hour: 5
+    day: :saturday
+    hour: 23 # 11 PM PST
 
 csv:
   path: "./files/csm_export.csv"
