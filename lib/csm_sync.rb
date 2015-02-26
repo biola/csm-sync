@@ -24,6 +24,7 @@ module CSMSync
     end
 
     if defined? ::ExceptionNotifier
+      require 'active_support'
       require 'active_support/core_ext'
       require 'exception_notification/sidekiq'
       ExceptionNotifier.register_exception_notifier(:email, Settings.exception_notification.options.to_hash)
