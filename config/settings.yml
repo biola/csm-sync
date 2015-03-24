@@ -18,18 +18,8 @@ worker:
 csv:
   path: "./files/csm_export.csv"
 
-# See http://rdoc.info/github/mikel/mail/Mail#defaults-class_method
-email:
-  from: no-reply@biola.edu
-  delivery_method: test
-  options: {}
-
-exception_notification:
-  options:
-    email_prefix: "[csm-sync] "
-    sender_address: "no-reply@biola.edu"
-    exception_recipients:
-      - appdev@biola.edu
+sentry:
+  url: # Sentry URL goes here in settings.local.yml
 
 upload:
   host: biola-csm.symplicity.com

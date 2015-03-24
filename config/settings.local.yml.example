@@ -1,6 +1,9 @@
 oracle:
   connection_string: "username/******@dbserver.example.com/PROD.example.com"
 
+sentry:
+  url:  
+
 ws:
   cert_path: /path/to/cert.pem
   key_path: /path/to/cert.pem
