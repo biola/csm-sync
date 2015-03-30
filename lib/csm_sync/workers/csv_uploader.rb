@@ -7,6 +7,9 @@ module CSMSync
       TIMEOUT = 60 * 5 # 5 min
 
       def perform(file_path)
+        # net-ssh uses File.expand_path which will thow a "non-absolute home" error if HOME isn't an absolute path.
+        ENV['HOME'] = Dir.pwd
+
         # A bad password triggers a password prompt that will just sit there. So we need to trigger a timeout if it goes too long.
         Timeout.timeout(TIMEOUT) do
           # Net::SCP seems to just return nil on sucess and always raise an erorr on failure. So not much to check here.
