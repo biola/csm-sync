@@ -29,6 +29,10 @@ Running
 sidekiq -r ./config/environment.rb
 ```
 
+Console
+-------
+To launch a console, `cd` into the app directory and run `irb -r ./config/environment.rb`
+
 Deployment
 ----------
 ```bash
