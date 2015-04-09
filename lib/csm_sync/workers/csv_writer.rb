@@ -13,6 +13,7 @@ module CSMSync
           file_path = Settings.csv.path
           contacts = Contact.all
           if CSV.new(contacts.map(&:csv_attributes), file_path).save!
+            sleep 2 # give the file time to be written before uploading it
             CSVUploader.perform_async(file_path)
           end
         end
