@@ -12,10 +12,13 @@ module CSMSync
 
         # A bad password triggers a password prompt that will just sit there. So we need to trigger a timeout if it goes too long.
         Timeout.timeout(TIMEOUT) do
+          Log.info "Uploading #{file_path} to #{Settings.upload.host}..."
           # Net::SCP seems to just return nil on sucess and always raise an erorr on failure. So not much to check here.
           Net::SCP.upload!(Settings.upload.host, Settings.upload.username, file_path, FILE_NAME, ssh: {password: Settings.upload.password})
+          Log.info "Finished uploading #{file_path} to #{Settings.upload.host}"
         end
 
+        Log.info "Deleting #{file_path}"
         File.unlink file_path
       end
     end
