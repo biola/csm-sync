@@ -26,6 +26,7 @@ module CSMSync
     end
 
     require 'biola_web_services'
+    require './lib/log'
     require './lib/csm_sync/contact'
     require './lib/csm_sync/csv'
     require './lib/csm_sync/netid'
