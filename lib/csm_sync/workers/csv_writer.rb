@@ -16,8 +16,10 @@ module CSMSync
 
           if CSV.new(contacts.map(&:csv_attributes), file_path).save!
             Log.info "#{contacts.length} contacts saved to #{file_path}"
-            sleep 2 # give the file time to be written before uploading it
-            CSVUploader.perform_async(file_path)
+            # It would be nice to run this asynchronously but in a load balanced situation
+            # we can't guarantee that the file wasn't written onto a different server.
+            # Until we have a shared files directory, this is the best workaround.
+            CSVUploader.new.perform(file_path)
           end
         else
           Log.warn "Worker is disabled"
