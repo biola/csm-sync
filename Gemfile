@@ -1,6 +1,7 @@
 source 'https://rubygems.org'
 source 'https://gems.biola.edu'
 
+gem 'activesupport'
 gem 'biola_web_services'
 gem 'blazing'
 gem 'mail'
