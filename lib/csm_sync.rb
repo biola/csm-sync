@@ -25,6 +25,8 @@ module CSMSync
       config.redis = { url: Settings.redis.url, namespace: 'csm-sync' }
     end
 
+    require 'active_support'
+    require 'active_support/core_ext'
     require 'biola_web_services'
     require './lib/log'
     require './lib/csm_sync/contact'

@@ -11,7 +11,7 @@ module CSMSync
       def perform
         if Settings.worker.enabled
           file_path = Settings.csv.path
-          contacts = Contact.all
+          contacts = Contact.all.select{|c| c.email.present?}
           Log.info "Found #{contacts.length} contacts"
 
           if CSV.new(contacts.map(&:csv_attributes), file_path).save!

@@ -101,6 +101,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  activesupport
   biola_web_services
   blazing
   mail
