@@ -105,7 +105,7 @@ WHERE id NOT IN(SELECT id FROM bsv_csm_student)'
     def csv_attributes
       {
         'CAS Username' => cas_username,
-        'Student ID' => id_number,
+        'Student ID' => id_number.to_i,
         'Full Name' => full_name,
         'First Name' => first_name,
         'MI' => middle_initial,

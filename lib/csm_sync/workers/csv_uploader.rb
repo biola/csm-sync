@@ -17,11 +17,7 @@ module CSMSync
           Net::SCP.upload!(Settings.upload.host, Settings.upload.username, file_path, FILE_NAME, ssh: {password: Settings.upload.password})
           Log.info "Finished uploading #{file_path} to #{Settings.upload.host}"
         end
-
-        Log.info "Deleting #{file_path}"
-        File.unlink file_path
       end
     end
   end
 end
-
