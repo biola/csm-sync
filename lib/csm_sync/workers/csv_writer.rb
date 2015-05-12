@@ -10,7 +10,15 @@ module CSMSync
 
       def perform
         if Settings.worker.enabled
+          Log.info "Starting Sync"
           file_path = Settings.csv.path
+
+          # Delete the old csv before creating a new one
+          if File.exists?(file_path)
+            File.unlink file_path
+            Log.info "Deleted Old CSV: #{file_path}"
+          end
+
           contacts = Contact.all.select{|c| c.email.present?}
           Log.info "Found #{contacts.length} contacts"
 
