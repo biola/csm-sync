@@ -131,7 +131,8 @@ WHERE id NOT IN(SELECT id FROM bsv_csm_student)'
         'School' => school,
         'Degree' => degree,
         'Major' => major,
-        'Concentration' => concentration
+        'Concentration' => concentration,
+        'Local Username' => cas_username
       }
     end
 
