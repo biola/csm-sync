@@ -25,6 +25,11 @@ module CSMSync
       config.redis = { url: Settings.redis.url, namespace: 'csm-sync' }
     end
 
+    schedule_file = "config/schedule.yml"
+    if File.exists?(schedule_file)
+      Sidekiq::Cron::Job.load_from_hash YAML.load_file(schedule_file)
+    end
+
     require 'active_support'
     require 'active_support/core_ext'
     require 'biola_web_services'

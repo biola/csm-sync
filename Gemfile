@@ -3,12 +3,11 @@ source 'https://gems.biola.edu'
 
 gem 'activesupport'
 gem 'biola_web_services'
-gem 'blazing'
 gem 'mail'
 gem 'net-scp'
 gem 'rails_config', '0.5.0.beta1'
 gem 'sidekiq'
-gem 'sidetiq'
+gem 'sidekiq-cron'
 
 group :development, :staging, :production do
   gem 'ruby-oci8', require: 'oci8'

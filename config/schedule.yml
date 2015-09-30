@@ -1,0 +1,4 @@
+CSVWriter:
+  cron: "0 23 * * 6"
+  class: "CSMSync::Worker::CSVWriter"
+  queue: default

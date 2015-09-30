@@ -2,11 +2,6 @@ module CSMSync
   module Worker
     class CSVWriter
       include Sidekiq::Worker
-      include Sidetiq::Schedulable
-
-      recurrence do
-        weekly.day(Settings.worker.schedule.day).hour_of_day(Settings.worker.schedule.hour)
-      end
 
       def perform
         if Settings.worker.enabled
@@ -20,7 +15,7 @@ module CSMSync
           end
 
           contacts = Contact.all.select{|c| c.email.present?}
-          Log.info "Found #{contacts.length} contacts"
+          Log.info "  Found #{contacts.length} contacts"
 
           if CSV.new(contacts.map(&:csv_attributes), file_path).save!
             Log.info "#{contacts.length} contacts saved to #{file_path}"
