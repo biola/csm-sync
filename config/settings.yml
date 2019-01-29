@@ -1,13 +1,13 @@
 oracle:
-  connection_string: # set in settings.local.yml
+  connection_string: <%= ENV['ORACLE_CONNECTION_STRING'] || '""' %>
 
 redis:
   url: redis://localhost:6379/0
 
 ws:
-  cert_path: # set in settings.local.yml
-  key_path: # set in settings.local.yml
-  key_password: # set in settings.local.yml
+  cert_path: <%= ENV['WS_CERT_PATH'] || '""' %>
+  key_path: <%= ENV['WS_KEY_PATH'] || '""' %>
+  key_password: <%= ENV['WS_KEY_PASSWORD'] || '""' %>
 
 worker:
   enabled: true
@@ -19,12 +19,12 @@ csv:
   path: "./files/csm_export.csv"
 
 sentry:
-  url: # Sentry URL goes here in settings.local.yml
+  url: <%= ENV['SENTRY_URL'] || '""' %>
 
 upload:
   host: biola-csm.symplicity.com
   username: bioladrop
-  password: # set in settings.local.yml
+  password: <%= ENV['UPLOAD_PASSWORD'] || '""' %>
 
 picklists:
   race:

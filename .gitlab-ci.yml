@@ -1,0 +1,30 @@
+# Global variables
+variables:
+  APP_NAME: csm-sync
+  RELATIVE_URL_ROOT: /
+  BUILD_ID: $APP_NAME-$CI_JOB_ID
+
+# All build steps are contained in the Dockerfile
+build:
+  stage: build
+  script:
+    - docker build --pull --build-arg CI_BUILD_STAGE=true --build-arg RELATIVE_URL_ROOT=$RELATIVE_URL_ROOT -t biola/$APP_NAME:latest .
+
+# Test the image built in the step above
+# `before_script` creates dependencies, `after_script` cleans them up
+test:
+  stage: test
+  script:
+    - "echo 'WARNING: This app needs tests.'"
+
+# Deploy the image to Docker Hub
+# The tag will be in the format yy.mm.x where x is the CI pipeline ID in GitLab
+deploy:
+  stage: deploy
+  only:
+    - master
+  script:
+    - TAG=$(date +%y).$(date +%m).$CI_PIPELINE_ID
+    - docker tag biola/$APP_NAME:latest biola/$APP_NAME:$TAG
+    - docker push biola/$APP_NAME:latest
+    - docker push biola/$APP_NAME:$TAG
